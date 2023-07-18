@@ -149,7 +149,7 @@ class ReactivePhoneFormField<T> extends ReactiveFormField<T, PhoneNumber> {
     ui.BoxWidthStyle selectionWidthStyle = ui.BoxWidthStyle.tight,
     TextStyle? countryCodeStyle,
     bool enableIMEPersonalizedLearning = true,
-    bool isCountrySelectionEnabled = true,
+    bool isCountrySelectionEnabled = false,
     bool isCountryChipPersistent = false,
     ReactiveFormFieldCallback<T>? onChanged,
   }) : super(
@@ -226,7 +226,7 @@ class ReactivePhoneFormField<T> extends ReactiveFormField<T, PhoneNumber> {
               selectionHeightStyle: selectionHeightStyle,
               selectionWidthStyle: selectionWidthStyle,
               enableIMEPersonalizedLearning: enableIMEPersonalizedLearning,
-              isCountrySelectionEnabled: isCountrySelectionEnabled,
+              isCountrySelectionEnabled: field.control.enabled || isCountrySelectionEnabled,
               isCountryChipPersistent: isCountryChipPersistent,
             );
           },
